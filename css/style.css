@@ -1,0 +1,21 @@
+body{
+    background-color: #cccccc !important;
+}
+
+.moi{
+    border: 2px black solid !important;
+}
+
+#nav-reg{
+    margin-bottom: 50px;
+}
+
+#reg-btn{
+    margin-top: 20px;
+
+}
+
+#log-btn{
+    width: 80% !important;
+    margin-bottom: 30px;
+}
