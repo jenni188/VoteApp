@@ -38,6 +38,11 @@
       </nav>
       
       <div class="container">
+        <div id="msg" class="alert alert-dismissible alert-danger d-none">
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          <h4 class="alert-heading">Warning!</h4>
+          <p class="mb-0"></a></p>
+        </div>
         <div class="row">
           <div class="col-3 moi">
             One of three columns
@@ -75,6 +80,8 @@
           </div>
         </div>
       </div>
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

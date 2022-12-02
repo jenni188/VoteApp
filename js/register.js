@@ -9,25 +9,32 @@ function registerNewUser(event){
 
 
     if (username.length <= 0){
-        alert('Username is required');
+        showMessage('error','Username is required');
         return;
     }
 
     if (password.length <= 2){
-        alert('Password minimum lenght is 6 characters');
+        showMessage('error','Password minimum lenght is 6 characters');
         return;
     }
 
     if (password.localeCompare(password2) != 0 ){
-        alert('Passwords doesnt match!!');
+        showMessage('error','Passwords doesnt match!!');
         return;
     }
 
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
-        console.log(ajax.responseText);
+        const data = JSON.parse(this.responseText);
+        if (data.hasOwnProperty('success')){
+            window.location.href = "login.php?type=success&msg=Voit kirjautua uusilla tunnuksikka";
+        } else{
+            showMessage('error',data.error);
+        }
     }
 
     ajax.open("POST" , "backend/registerNewUser.php", true);
-    ajax.send();
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.send("username="+username+"&password="+password);
 }
+
